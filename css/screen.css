@@ -3,7 +3,7 @@
     ---
     Default markup for page level elements
 */
-@font-face{
+@font-face {
     font-family: "Inter UI";
     font-weight: 100;
     src: url("../fonts/Inter-UI-Regular.woff2");
@@ -47,13 +47,18 @@ html {
     /*font-family: "Inter UI", "Helvetica Neue", Helvetica, arial, sans-serif;*/
     font-family: "DroidSerif", Georgia, serif;
     color: #5C6366;
-    padding: 48px 24px 24px;
+    /*padding: 48px 24px 24px;*/
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+*,*:before, *:after{
+    box-sizing: border-box;
 }
 
 body {
-    max-width: 42em;
+    /*max-width: 42em;*/
     margin: 0 auto;
 }
 
@@ -63,7 +68,6 @@ body {
  *
  * Customize the background color to match your design.
  */
-
 ::selection {
     background: #00E6A1;
     color: white;
@@ -75,7 +79,6 @@ body {
     ---
     Default markup for images to make them responsive
 */
-
 img {
     max-width: 100%;
     vertical-align: top;
@@ -86,7 +89,7 @@ img {
     ---
     Default markup for typographic elements
 */
-h1, h2, h3{
+h1, h2, h3 {
     color: #17181A;
     font-family: "Inter UI", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
@@ -185,15 +188,14 @@ a:focus {
 }
 
 /* Small devices (landscape phones, 576px and up) */
-
 @media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
-
 @media (min-width: 768px) {
     html {
-        padding: 48px 48px 24px;
+        /*padding: 48px 48px 24px;*/
     }
+
     h1 {
         font-size: 58px;
         line-height: 64px;
@@ -201,11 +203,9 @@ a:focus {
 }
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
-
 @media (min-width: 992px) {}
 
 /* Extra large devices (large desktops, 1200px and up) */
-
 @media (min-width: 1200px) {}
 
 /*
@@ -235,10 +235,76 @@ a:focus {
     margin-top: 4px;
 }
 
-.c-author__name{
+.c-author__name {
     font-size: 16px;
     line-height: 16px;
 }
+
+/*
+Components: article
+*/
+.c-article__header, .c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-article__header {
+    padding: 24px 24px 0;
+}
+
+.c-article__body {
+    padding: 0 24px;
+}
+
+/* medium device tablets */
+@media (min-width: 768px) {
+    .c-article__header {
+        padding: 48px 48px 24px;
+    }
+
+    .c-article__author {
+        padding-bottom: 24px;
+    }
+
+    .c-article__body {
+        padding: 24px 48px;
+    }
+}
+
+/* Large devices (landscape tablets, desktops, 992px and up) */
+@media (min-width: 992px) {
+    .c-article__body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .c-article__author {
+        width: 25%;
+        padding-right: 24px;
+    }
+
+    .c-article__content {
+        width: 75%;
+    }
+}
+
+@media (min-width: 992px){
+    .c-author{
+        display: block;
+    }
+    .c-author__image{
+        margin-bottom: 16px;
+    }
+}
+/*
+Utilities:
+utility classes to put max width on specific elements
+*/
+
+.u-max-width-sm {
+    max-width: 36em;
+}
+
 
 /*
     Print styles.
@@ -246,8 +312,8 @@ a:focus {
     Inlined to avoid the additional HTTP request:
     http://www.phpied.com/delay-loading-your-print-css/
 */
-
 @media print {
+
     *,
     *:before,
     *:after {
@@ -258,16 +324,20 @@ a:focus {
         box-shadow: none !important;
         text-shadow: none !important;
     }
+
     a,
     a:visited {
         text-decoration: underline;
     }
+
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: " ("attr(href) ")";
     }
+
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: " ("attr(title) ")";
     }
+
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
@@ -276,14 +346,17 @@ a:focus {
     a[href^="javascript:"]:after {
         content: "";
     }
+
     pre {
         white-space: pre-wrap !important;
     }
+
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
+
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
@@ -291,16 +364,19 @@ a:focus {
     thead {
         display: table-header-group;
     }
+
     tr,
     img {
         page-break-inside: avoid;
     }
+
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
+
     h2,
     h3 {
         page-break-after: avoid;

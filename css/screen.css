@@ -252,6 +252,13 @@ Components: article
     padding: 24px 24px 0;
 }
 
+.c-article__date{
+    font-size: 14px;
+    font-family: "DroidSerif", Georgia, serif;
+    line-height: 16px;
+    color: #5C6366;
+}
+
 .c-article__body {
     padding: 0 24px;
 }
@@ -294,6 +301,13 @@ Components: article
     }
     .c-author__image{
         margin-bottom: 16px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    h1{
+        font-size: 52px;
     }
 }
 /*
